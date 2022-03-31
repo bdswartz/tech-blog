@@ -1,3 +1,10 @@
+:root {
+  --primary-color: #acdbf5;
+  --secondary-color: #02324d;
+  --tertiary-color: #037dbe;
+  --quarternary-color: #39a6b2;
+  }
+
 * {
   box-sizing: border-box;
 }
@@ -7,25 +14,26 @@ body, html {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  color: #333;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: var(--secondary-color);
   font-weight: bold;
   transition: color .1s;
 }
 
 a:hover {
-  color: #3486eb;
+  color: var(--tertiary-color);
 }
 
 button {
-  background-color: #225ca3;
+  background-color: var(--secondary-color);
   border: 0;
   padding: 1%;
-  color: white;
+  color: var(--primary-color);
   font-weight: bold;
   transition: background-color .1s;
   cursor: pointer;
@@ -33,7 +41,7 @@ button {
 }
 
 button:hover {
-  background-color: #3486eb;
+  background-color: var(--tertiary-color);
 }
 
 .post-list {
@@ -44,12 +52,12 @@ button:hover {
 textarea, input {
   padding: .5%;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid black;
 }
 
 textarea:focus, input:focus {
   outline: none;
-  border: 1px solid #3486eb;
+  border: 1px solid black;
 }
 
 textarea {
@@ -75,15 +83,19 @@ form label {
 }
 
 header {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1%;
+  background-color: var(--secondary-color);
+  
 }
 
 header h1 {
   font-size: 1em;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 main {
@@ -97,7 +109,7 @@ main {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #225ca3;
+  color: var(--secondary-color);
   font-size: 100%;
   font-weight: bold;
   transition: color .1s;
@@ -106,7 +118,7 @@ main {
 
 .btn-no-style:hover {
   background: none;
-  color: #3486eb;
+  color: var(--tertiary-color);
 }
 
 .delete-post-btn {
@@ -131,15 +143,6 @@ main {
 .edit-link {
   display: block;
   margin: -1.5% 0 2% 0;
-}
-
-.upvote-btn {
-  background-color: #197d0f;
-  transition: background-color .1s;
-}
-
-.upvote-btn:hover {
-  background-color: #1f9c13;
 }
 
 .comment-form {
@@ -170,7 +173,7 @@ main {
 }
 
 footer {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid black;
   display: flex;
   justify-content: center;
   padding: 1%;
