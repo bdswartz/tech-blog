@@ -52,18 +52,18 @@ router.get('/:id', (req, res) => {
       });
   });
 
-// POST /api/users  **** checked
+// POST /api/users  **** checked (but not session storage)
 router.post('/', (req, res) => {
     // expects {username: 'swartz', password: '12345'}
     User.create(req.body)
     .then(dbUserData => {
-      // req.session.save(() => {
-      //   req.session.user_id = dbUserData.id;
-      //   req.session.username = dbUserData.username;
-      //   req.session.loggedIn = true;
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.loggedIn = true;
     
         res.json(dbUserData);
-      // });
+      });
     })
       .catch(err => {
         console.log(err);
@@ -74,7 +74,7 @@ router.post('/', (req, res) => {
 router.post('/login', (req, res) => {
   User.findOne({
     where: {
-      email: req.body.email
+      username: req.body.username
     }
   }).then(dbUserData => {
     if (!dbUserData) {
@@ -83,12 +83,11 @@ router.post('/login', (req, res) => {
     }
 
     const validPassword = dbUserData.checkPassword(req.body.password);
-
+    
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect password!' });
       return;
     }
-
     req.session.save(() => {
       // declare session variables
       req.session.user_id = dbUserData.id;
@@ -99,7 +98,8 @@ router.post('/login', (req, res) => {
     });
   });
 });
-  
+
+// POST /api/users/logout
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

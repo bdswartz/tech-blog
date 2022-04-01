@@ -4,7 +4,7 @@ const htmlHomeRoutes = require('./html-home-routes.js');
 const htmlDashboardRoutes = require('./html-dashboard-routes.js');
 const apiRoutes = require('./api');
 
-// router.use('/', htmlHomeRoutes);
+router.use('/', htmlHomeRoutes);
 router.use('/api', apiRoutes);
 // router.use('/dashboard', htmlDashboardRoutes);
 

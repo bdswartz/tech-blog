@@ -1,7 +1,12 @@
-<ol class="post-list">
+<div class="header-banner">
+    <h1>
+      <a href="/">The Tech Blog</a>
+    </h1>
+</div>
+<ul class="post-list">
   {{#each posts as |post|}}
-  <li>
+  <li class="post-card">
     {{> post-info post }}
   </li>
   {{/each}}
-</ol>
+</ul>
