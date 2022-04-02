@@ -1,10 +1,13 @@
-
-{{> post-info post }}
+<div class="post-list">
+  <div class="post-card">
+    {{> post-info post }}
+  </div>
+</div>
 
 {{#if loggedIn}}
 <form class="comment-form">
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea name="comment-body" placeholder="Comments..."></textarea>
   </div>
 
   <div>
@@ -12,8 +15,15 @@
   </div>
 </form>
 {{/if}}
-
-{{> comments post.comments}}
+{{#if post.comments}}
+<div class="comment-card">
+  <div class="post-header">
+    <p class="post-title">Comments</h2>
+  </div>
+   {{> comments post.comments}}
+  </div>
+</div>
+{{/if}}
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 {{/if}}

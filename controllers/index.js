@@ -6,7 +6,7 @@ const apiRoutes = require('./api');
 
 router.use('/', htmlHomeRoutes);
 router.use('/api', apiRoutes);
-// router.use('/dashboard', htmlDashboardRoutes);
+router.use('/dashboard', htmlDashboardRoutes);
 
 // If invalid route, let user know with 404 error
 router.use((req, res) => {

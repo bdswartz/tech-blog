@@ -24,7 +24,8 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // set up an Express.js session and connect the session to our Sequelize database
 const sess = {
   secret: 'Super secret secret',
-  cookie: {
+  cookie: { 
+    // maxAge: 180000
     // configure options such as max age of cookie here
   },
   resave: false,
