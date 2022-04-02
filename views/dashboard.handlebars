@@ -1,18 +1,21 @@
+<div class="header-banner">
+    <h1>
+      <a href="/">The Tech Blog</a>
+    </h1>
+</div>
+<section class="post-section"> 
 {{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ol>
+  <h2 class="post-section-title">Your Posts</h2>
+  <ul class="post-list">
     {{#each posts as |post|}}
-    <li>
+  <li class="post-card">
       {{> post-info post}}
       <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
     </li>
     {{/each}}
-  </ol>
-      <a href="/dashboard/create-post">
-        <button class="btn new-post-btn">Add New Post</button>
-      </a>
-</section>
+  </ul>
 {{/if}}
-
-
+<a class="add-new-post" href="/dashboard/create-post">
+    <button class=" btn add-post-btn">Add New Post</button>
+  </a>
+</section>

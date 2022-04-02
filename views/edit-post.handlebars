@@ -1,32 +1,44 @@
 <article>
-  <h2>
-    Edit Post
-  </h2>
+  <div class="comment-card">
+    <div class="post-header">
+      <p class="post-title">
+        Edit Post
+      </p>
+    </div>
   <form class="edit-post-form">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      <input name="post-contents" type="text" value="{{post.post_contents}}" />
+      <label for="post-title">Title</label>
+      <input type="text" id="post-title" name="post-title" value="{{post.title}}"/>
     </div>
+    <div>
+      <label for="post-contents">Contents</label>
+      <textarea id="post-contents" name="post-contents">{{post.post_contents}}</textarea>t
+    </div>
+    {{!-- <div>
+      <input name="post-title" type="text" value="{{post.title}}" />
+      <textarea name="post-contents" type="text" value="{{post.post_contents}}">
+      </textarea>
+    </div> --}}
     {{!-- <div>
       <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
     </div> --}}
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    <div>
+      <button type="submit" class="button">Save post</button>
+      <button type="button" class="delete-post-btn button">Delete post</button>
+    </div>
   </form>
 </article>
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
 {{#if loggedIn}}
-{{> comments post.comments}}
+  {{#if post.comments}}
+    <div class="comment-card">
+      <div class="post-header">
+        <p class="post-title">Comments</h2>
+      </div>
+      {{> comments post.comments}}
+      </div>
+  {{/if}}
+  {{> comment-form}}
 {{/if}}
-
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
 <script src="/javascript/comment.js"></script>

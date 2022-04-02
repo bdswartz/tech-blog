@@ -1,7 +1,11 @@
 
 <section>
-  <h2>Create New Post</h2>
-
+  <div class="comment-card">
+    <div class="post-header">
+      <p class="post-title">
+        Create New Post
+      </p>
+    </div>
   <form class="new-post-form">
     <div>
       <label for="post-title">Title</label>
@@ -9,9 +13,10 @@
     </div>
     <div>
       <label for="post-contents">Contents</label>
-      <input id="post-contents" name="post-contents" />
+      <textarea id="post-contents" name="post-contents" ></textarea>
     </div>
-    <button type="submit" class="btn">Create Post</button>
+    <button type="submit" class="button btn">Create Post</button>
   </form>
+  </div>
 </section>
 <script src="/javascript/create-post.js"></script>

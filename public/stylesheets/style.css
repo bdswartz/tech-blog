@@ -30,6 +30,20 @@ a {
 a:hover {
   color: var(--primary-color);
 }
+.post-section {
+  display: flex;
+  flex-direction: column;
+}
+.add-new-post {
+  align-self: center;
+}
+
+.add-post-btn {
+  margin-top: 10px; 
+  margin-bottom: 20px;
+  height: 50px;
+  width: 100px;
+}
 
 button {
   background-color: var(--secondary-color);
@@ -65,32 +79,36 @@ button:hover {
 .comment-card {
   flex: 1;
   width: 90%;
-  margin: 0 auto;
+  margin: 15px auto 15px auto;
   border: 3px solid;
 }
 .post-header {
   display: flex;
   justify-content: space-between;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   padding: 15px 5px;
   background-color: var(--secondary-color);
+}
+
+.post-section-title {
+  margin: 20px 0 0 15px;
 }
 .post-title {
   color: var(--primary-color);
   margin-left: 10px;
-  margin-top:0;
+  margin-top:0; 
   margin-bottom: 0;
   font-weight: bold;
 }
 .post-data {
   color: var(--quarternary-color);
-  font-size: 1.0rem;
+  font-size: .9rem;
   margin-right: 15px;
 }
 
 .post-content p {
   padding: 0px 10px;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
 }
 
 ul {  
@@ -255,6 +273,10 @@ main {
   margin-left: 16px;
 }
 
+.edit-post-btn {
+    padding: 20px:
+}
+
 .btn-no-style:hover {
   background: none;
   color: var(--primary-color);
@@ -268,9 +290,28 @@ main {
   background-color: #ff643d;
 }
 
-.edit-link {
+button {
+  height: 50px;
+  width: 100px;
+}
+#post-contents {
+  height: 150px;
+  width: 50%;
+  font-size: 1.0rem;
+  text-align: left;
+  align-content: flex-start;  
+}
+#post-title {
+  width: 50%;
+  font-size: 1.25rem;
+}
+.edit-link {  
   display: block;
-  margin: -1.5% 0 2% 0;
+  margin: 20px 10px 10px 10px;
+  color: var(--tertiary-color)
+}
+.edit-link:hover {
+  color: var(--secondary-color)
 }
 
 .comment-form {
@@ -315,8 +356,11 @@ main {
   width: 300px;
 }
 
-.edit-post-form {
-  margin-bottom: 5%;
+.edit-post-form, .new-post-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 10px 20px;
 }
 
 footer {
