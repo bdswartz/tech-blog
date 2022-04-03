@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 
-// Get all posts
+// Homepage route
 router.get('/', (req, res) => {
     console.log(req.session);
     Post.findAll({
@@ -32,7 +32,8 @@ router.get('/', (req, res) => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
         res.render('homepage', {
           posts,  
-          loggedIn: req.session.loggedIn
+          loggedIn: req.session.loggedIn,
+          username: req.session.username
         });
       })
       .catch(err => {
@@ -44,7 +45,7 @@ router.get('/', (req, res) => {
   // Login path
   router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/');
+      res.redirect('/dashboard', {username: req.session.username});
       return;
     }
     res.render('login');
@@ -59,7 +60,7 @@ router.get('/', (req, res) => {
     res.render('signup');
   });
 
-
+// Single Post HTML Route
   router.get('/post/:id', (req, res) => {
     Post.findOne({
       where: {
@@ -94,10 +95,10 @@ router.get('/', (req, res) => {
   
         // serialize the data
         const post = dbPostData.get({ plain: true });
-        console.log(post);
         res.render('single-post', {
           post,
-          loggedIn: req.session.loggedIn
+          loggedIn: req.session.loggedIn,
+          username: req.session.username
         });
         
       })

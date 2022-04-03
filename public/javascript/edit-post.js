@@ -5,7 +5,7 @@ async function editFormHandler(event) {
         window.location.toString().split('/').length - 1
       ];
     const post_title = document.querySelector('input[name="post-title"]').value.trim();
-    const post_contents = document.querySelector('textarea[name="post-contents"]').innerHTML.trim();
+    const post_contents = document.querySelector('textarea[name="post-contents"]').value.trim();
   
     if (post_title && post_contents) {
       console.log(post_title);

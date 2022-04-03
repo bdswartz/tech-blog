@@ -8,7 +8,11 @@
   }
 
 * {
-  box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+.billboard {
+  box-shadow: 7px 7px 3px #a3b6c1;    
 }
 
 body, html {
@@ -30,19 +34,29 @@ a {
 a:hover {
   color: var(--primary-color);
 }
-.post-section {
-  display: flex;
-  flex-direction: column;
-}
+
 .add-new-post {
   align-self: center;
-}
+  margin-top: 20px;
+} 
 
 .add-post-btn {
-  margin-top: 10px; 
+  align-self: flex-end;
+  margin-top: auto; 
   margin-bottom: 20px;
   height: 50px;
   width: 100px;
+}
+.section-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+  /* min-height: 100vh; */
+}
+.post-section {
+  display: flex;
+  flex-direction: column;
 }
 
 button {
@@ -54,6 +68,11 @@ button {
   transition: background-color .1s;
   cursor: pointer;
   border-radius: 5px;
+  margin-right: 10px;
+}
+.create-post {
+  height: 50px;
+  width: 100px;
 }
 
 button:hover {
@@ -225,11 +244,16 @@ header {
 header a {
   font-size: 1.25rem;
   margin: 10px 20px;
-  font-weight: normal;
+  font-weight: normal;  
 }
+
 nav {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+nav a {
+  padding: auto 0 !important;
 }
 
 h1 {
@@ -254,16 +278,34 @@ h1 a:hover {
   background-color: var(--secondary-color);
   padding-top: 40px;
   padding-bottom: 50px;
-}
+} 
 
 main {
-  flex: 1;
+  flex:1;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--quarternary-color);
+  font-size: 1.25rem;
+  transition: color .1s;
+  font-weight: normal;
+  position: relative;
+  top:-3px; 
+  left: 10px;
+}
+
+.logout-button:hover {
+  background: none;
+  color: var(--primary-color);
 }
 
 .btn-no-style {
   background: none;
   border: none;
-  padding: 0;
+  padding-bottom: 15px;
   cursor: pointer;
   text-decoration: none;
   color: var(--quarternary-color);
@@ -290,10 +332,6 @@ main {
   background-color: #ff643d;
 }
 
-button {
-  height: 50px;
-  width: 100px;
-}
 #post-contents {
   height: 150px;
   width: 50%;
@@ -354,6 +392,17 @@ button {
 
 .new-post-form input {
   width: 300px;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+}
+
+.login-info {
+  color: var(--quarternary-color);
+  margin-right: 20px;
+  margin-left: auto;
 }
 
 .edit-post-form, .new-post-form {

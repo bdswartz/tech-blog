@@ -11,20 +11,16 @@
 <body>
   <div class="wrapper">
     <header>
-    <nav>
+    <nav class="nav-bar">
       <a href="/">Home</a>
       <a href="/dashboard">Dashboard</a>
       {{#if loggedIn}}
-      <button id="logout" class="btn-no-style">Logout</button>
+      <button id="logout" class="logout-button">Logout</button>
+      <p class="login-info">logged in as {{username}}</p>
       {{else}}
       <a class="login-psbtn" href="/login">Login</a>
       {{/if}}
     </nav>
-    {{!-- <div class="header-banner">
-    <h1>
-      <a href="/">Tech Blog</a>
-    </h1>
-   </div> --}}
   </header>
     <main>
       {{{ body }}}

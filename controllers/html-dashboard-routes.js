@@ -5,6 +5,7 @@ const { Post, User, Comment } = require('../models');
 
 // route to the this file /dashboard
 
+// User Dashboard HTML route
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
       where: {
@@ -35,7 +36,7 @@ router.get('/', withAuth, (req, res) => {
       .then(dbPostData => {
         // serialize data before passing to template
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('dashboard', { posts, loggedIn: true });
+        res.render('dashboard', { posts, loggedIn: true, username: req.session.username});
       })
       .catch(err => {
         console.log(err);
@@ -78,7 +79,7 @@ router.get('/', withAuth, (req, res) => {
         }
         // serialize data before passing to template
         const post = dbPostData.get({ plain: true });
-        res.render('edit-post', { post, loggedIn: true });
+        res.render('edit-post', { post, loggedIn: true, username: req.session.username });
       })
     .catch(err => {
         console.log(err);
@@ -86,8 +87,9 @@ router.get('/', withAuth, (req, res) => {
       });
   });
 
+  // Path to create a post HTML page
   router.get('/create-post', withAuth, (req, res) => {
-    res.render('create-post', { loggedIn: true });
+    res.render('create-post', { loggedIn: true, username: req.session.username });
     return;
   });
 
