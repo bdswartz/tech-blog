@@ -9,7 +9,7 @@
 
 * {
       box-sizing: border-box;
-    }
+  }
 
 .billboard {
   box-shadow: 7px 7px 3px #a3b6c1;    
@@ -40,8 +40,7 @@ a:hover {
   margin-top: 20px;
 } 
 
-.add-post-btn {
-  align-self: flex-end;
+.post-btn {
   margin-top: auto; 
   margin-bottom: 20px;
   height: 50px;
@@ -69,10 +68,6 @@ button {
   cursor: pointer;
   border-radius: 5px;
   margin-right: 10px;
-}
-.create-post {
-  height: 50px;
-  width: 100px;
 }
 
 button:hover {
@@ -159,7 +154,6 @@ textarea {
 .login-container {
   display: flex;
   flex-direction: column; 
-  min-height: 100vh;
   align-items: center;
   justify-content: center;
 }
@@ -171,7 +165,7 @@ textarea {
   color: var(--secondary-color);
 }
 .login-card {
-  margin: 0 0 50px 0;
+  margin: 50px 0;
   width: 40%;
   height: 60%;
   padding: 10px 30px; 
@@ -227,7 +221,6 @@ form label {
 .wrapper {
   width: 100%;
   min-height: 100%;
-  /* max-width: 1200px; */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -315,10 +308,6 @@ main {
   margin-left: 16px;
 }
 
-.edit-post-btn {
-    padding: 20px:
-}
-
 .btn-no-style:hover {
   background: none;
   color: var(--primary-color);
@@ -360,7 +349,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* align-items: center; */
 }
 
 .comment {
@@ -370,7 +358,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* align-items: center; */
 }
 
 .comment:nth-child(odd) {
