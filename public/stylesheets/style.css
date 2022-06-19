@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #d6ebf7;
+  --primary-color: #fcf5f5;
   --secondary-color: #02324d;
   --tertiary-color: #037dbe;
   --quarternary-color: #76e6f3;
@@ -108,7 +108,7 @@ button:hover {
   margin: 20px 0 0 15px;
 }
 .post-title {
-  color: var(--primary-color);
+  color: var(--quarternary-color);
   margin-left: 10px;
   margin-top:0; 
   margin-bottom: 0;
